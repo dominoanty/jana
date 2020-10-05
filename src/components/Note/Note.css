@@ -1,0 +1,96 @@
+.note {
+    background: white;
+    padding: 15px 10px;
+    margin: 5px 10px;
+    border: 1px solid rgba(230, 230, 230, 0.356);
+    transition: min-height 1s;
+    display: flex;
+    flex-direction: column;
+    transition: flex-grow 1000ms linear;
+    flex-grow: 0.0001;
+}
+
+.note-title {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    transition: border 0.5s;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.note-title.editing {
+    border-bottom: 1px solid rgb(107, 107, 107);
+    transition: border 0.5s;
+}
+
+.note-body {
+    font-size: 14px;
+    border-bottom: 1px solid white;
+    transition: border 0.5s;
+    padding: 5px;
+}
+.note-body.editing {
+    border-bottom: 1px solid black;
+    transition: border 0.5s;
+}
+
+.note-expanded {
+    flex-grow: 1;
+}
+
+.note-toolbar {
+    animation: slide-up 0.2s ease;
+}
+
+.note-tags {
+    margin-top: 5px;
+}
+
+.note-tag {
+    border: 1 px solid rgb(43, 43, 43);
+    background-color: rgb(43, 43, 43);
+    color: white;
+    width: auto;
+    font-size: 11px;
+    padding: 3px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 20px;
+}
+.note-add-tag {
+    background-color: white;
+    border: 1px solid rgb(43, 43, 43);
+    color: black;
+    font-size: 11px;
+    padding: 3px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 20px;
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+.note-add-tag.editing {
+    /* visibility: visible; */
+    opacity: 1;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.note-toolbar {
+    display: flex;
+    justify-content: flex-end;
+
+}
